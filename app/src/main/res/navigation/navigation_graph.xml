@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.ahmeteminyilmaz.todo.view.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_addingTaskOrActivity"
+            app:destination="@id/addingTaskOrActivity" />
+        <action
+            android:id="@+id/action_homePage_to_aboutAppPage"
+            app:destination="@id/aboutAppPage" />
+        <action
+            android:id="@+id/action_homePage_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+        <action
+            android:id="@+id/action_homePage_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addingTaskOrActivity"
+        android:name="com.ahmeteminyilmaz.todo.view.AddingTaskOrActivityFragment"
+        android:label="fragment_adding_task_or_activity"
+        tools:layout="@layout/fragment_adding_task_or_activity" >
+        <action
+            android:id="@+id/action_addingTaskOrActivity_to_aboutAppPage"
+            app:destination="@id/aboutAppPage" />
+        <action
+            android:id="@+id/action_addingTaskOrActivity_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_addingTaskOrActivity_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+        <argument
+            android:name="information"
+            app:argType="string"
+            android:defaultValue="camefrommenu" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_addingTaskOrActivity_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutAppPage"
+        android:name="com.ahmeteminyilmaz.todo.view.AboutAppFragment"
+        android:label="fragment_about_app_page"
+        tools:layout="@layout/fragment_about_app_page" >
+        <action
+            android:id="@+id/action_aboutAppPage_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_aboutAppPage_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+        <action
+            android:id="@+id/action_aboutAppPage_to_addingTaskOrActivity"
+            app:destination="@id/addingTaskOrActivity" />
+        <action
+            android:id="@+id/action_aboutAppPage_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoListFragment"
+        android:name="com.ahmeteminyilmaz.todo.view.ToDoListFragment"
+        android:label="fragment_to_do_list"
+        tools:layout="@layout/fragment_to_do_list" >
+        <action
+            android:id="@+id/action_toDoListFragment_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_toDoListFragment_to_aboutAppPage"
+            app:destination="@id/aboutAppPage" />
+        <action
+            android:id="@+id/action_toDoListFragment_to_addingTaskOrActivity"
+            app:destination="@id/addingTaskOrActivity" />
+        <action
+            android:id="@+id/action_toDoListFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.ahmeteminyilmaz.todo.view.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_weatherFragment_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+        <action
+            android:id="@+id/action_weatherFragment_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_weatherFragment_to_aboutAppPage"
+            app:destination="@id/aboutAppPage" />
+        <action
+            android:id="@+id/action_weatherFragment_to_addingTaskOrActivity"
+            app:destination="@id/addingTaskOrActivity" />
+    </fragment>
+</navigation>
